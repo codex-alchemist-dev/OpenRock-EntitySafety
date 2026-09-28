@@ -1,0 +1,8 @@
+{
+  "name": "@openrock/entity-safety",
+  "version": "1.0.0",
+  "description": "Safe wrappers for three real, previously-reproduced Bedrock timing/bounds traps: early-execution-unsafe world calls, dimension-change event location drift, and per-dimension Y-bounds clamping.",
+  "license": "MPL-2.0",
+  "private": true,
+  "main": "src/register.js"
+}
