@@ -119,9 +119,10 @@ function register() {
     };
 }
 
-module.exports = register;
-module.exports.safeDimensionChangeAction = safeDimensionChangeAction;
-module.exports.resolveActualLocation = resolveActualLocation;
-module.exports.describeLocationDrift = describeLocationDrift;
-module.exports.getDimensionYBounds = getDimensionYBounds;
-module.exports.clampToDimensionBounds = clampToDimensionBounds;
+// Object.assign() in ONE statement - see @openrock/pathfinding's header for
+// why (esbuild tree-shaking dropped separate trailing assignments, caught
+// via a real BDS run).
+module.exports = Object.assign(register, {
+    safeDimensionChangeAction, resolveActualLocation, describeLocationDrift,
+    getDimensionYBounds, clampToDimensionBounds,
+});
